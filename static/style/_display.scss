@@ -1,0 +1,32 @@
+// 文字中划线
+.text-through {
+	text-decoration: line-through;
+}
+
+.flex {
+	display: flex;
+}
+
+.fill {
+	flex: 1;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.row {
+	@extend .flex;
+}
+
+.col {
+	@extend .fill;
+}

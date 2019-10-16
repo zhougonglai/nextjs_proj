@@ -1,0 +1,27 @@
+.margin-horizontal {
+	margin-left: $n;
+	margin-right: $n;
+}
+
+.mt-1 {
+	margin-top: $n;
+}
+
+.mt-2 {
+	margin-top: 2 * $n;
+}
+
+.margin-vertical {
+	margin-top: $n;
+	margin-bottom: $n;
+}
+
+.padding-horizontal {
+	padding-left: $n;
+	padding-right: $n;
+}
+
+.padding-vertical {
+	padding-top: $n;
+	padding-bottom: $n;
+}
