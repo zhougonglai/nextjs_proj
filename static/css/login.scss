@@ -1,0 +1,39 @@
+@import '@material/react-fab/index.scss';
+@import '@material/react-material-icon/index.scss';
+@import '@material/react-text-field/index.scss';
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+	color: var(--mdc-theme-primary);
+}
+
+.login {
+	background-image: url('/static/assets/WechatIMG3.jpeg');
+	background-size: contain;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #f5f5f7;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	display: flex;
+	flex-direction: column;
+
+	.cards {
+		margin-top: 20vh;
+	}
+
+	.bottom {
+		bottom: 50px;
+	}
+
+	.right {
+		right: 50px;
+	}
+
+	.forms {
+		& > .mdc-text-field {
+			margin-top: 16px;
+		}
+	}
+}

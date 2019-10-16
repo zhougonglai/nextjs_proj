@@ -3,6 +3,14 @@
 	text-decoration: line-through;
 }
 
+.text-center {
+	text-align: center;
+}
+
+.absolute {
+	position: absolute !important;
+}
+
 .flex {
 	display: flex;
 }
@@ -29,4 +37,10 @@
 
 .col {
 	@extend .fill;
+}
+
+.title {
+	@extend .text-center;
+	@extend .large;
+	@extend .bold;
 }

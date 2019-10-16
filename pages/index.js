@@ -2,7 +2,7 @@ import Button from '@material/react-button';
 import Link from 'next/link';
 
 import Head from '../components/head';
-import '../static/style/index.scss';
+import '../static/css/index.scss';
 
 const scripts = ['//at.alicdn.com/t/font_1461110_47gj7bx9u48.js'];
 
@@ -54,7 +54,7 @@ export default () => {
 				<div className='col flex column align-center'>
 					<div className='box-avatar'>
 						<svg className='icon'>
-							<use xlinkHref='#icon-Datastatistics'></use>
+							<use xlinkHref='#icon-data'></use>
 						</svg>
 					</div>
 					<div className='box-title larger margin-vertical'>权威数据</div>
@@ -74,7 +74,7 @@ export default () => {
 				<div className='col flex column align-center'>
 					<div className='box-avatar'>
 						<svg className='icon'>
-							<use xlinkHref='#icon-ServiceCentre1'></use>
+							<use xlinkHref='#icon-service'></use>
 						</svg>
 					</div>
 					<div className='box-title larger margin-vertical'>技术实力</div>

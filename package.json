@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "@material/react-button": "^0.15.0",
+    "@material/react-fab": "^0.15.0",
+    "@material/react-material-icon": "^0.15.0",
     "@material/react-text-field": "^0.15.0",
     "@zeit/next-sass": "^1.0.1",
     "next": "^9.0.2",

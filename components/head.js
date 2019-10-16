@@ -28,6 +28,9 @@ const Head = props => (
 			href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
 			rel='stylesheet'
 		/>
+		<link
+			href='https://fonts.googleapis.com/icon?family=Material+Icons'
+			rel='stylesheet'></link>
 		{props.styles &&
 			props.styles.length &&
 			props.styles.map((style, i) => (
