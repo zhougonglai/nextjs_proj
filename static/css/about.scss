@@ -1,0 +1,96 @@
+.report {
+	background-color: #f5f5f7;
+	width: 750px;
+	height: 100vh;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	display: flex;
+	flex-direction: column;
+	.report-header {
+		height: 435px;
+		background-color: var(--mdc-theme-primary);
+		backdrop-filter: saturate(180%) blur(20px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+
+		.report-info {
+			display: flex;
+			flex: 1;
+			width: 80vw;
+			padding: 8px;
+			.info {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+			}
+
+			.rate {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-evenly;
+				.label {
+					background-color: #fff;
+					color: var(--mdc-theme-primary);
+					padding: 4px 8px;
+					border-radius: 32px;
+				}
+
+				.icon {
+					font-size: -webkit-xxx-large;
+				}
+			}
+		}
+		.report-descript {
+			padding: 25px;
+			width: 80vw;
+			line-height: 1.8;
+		}
+	}
+
+	.risk {
+		padding: 8px;
+		.subtitle {
+			color: var(--mdc-theme-dark);
+			display: flex;
+			align-items: center;
+			.material-icons {
+				color: var(--mdc-theme-primary);
+			}
+		}
+		.risk-descript {
+			p {
+				color: var(--mdc-theme-dark-shade);
+				text-indent: 25px;
+			}
+		}
+
+		.risk-list {
+			.list {
+				.item {
+					margin-top: 16px;
+					display: flex;
+					align-items: center;
+					font-size: larger;
+					line-height: 1.5;
+					color: var(--mdc-theme-dark-shade);
+
+					.fill {
+						height: 1px;
+						background-color: var(--mdc-theme-medium);
+					}
+				}
+			}
+		}
+	}
+
+	.loans {
+		display: flex;
+		.cart {
+			flex: 1;
+		}
+	}
+}

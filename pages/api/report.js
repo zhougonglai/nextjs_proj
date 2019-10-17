@@ -40,6 +40,7 @@ export default (req, res) => {
 				credit_card: 53,
 				p2p_lending: 36,
 			},
+			xin: {},
 		},
 	});
 };
