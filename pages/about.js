@@ -1,11 +1,25 @@
+import fetch from 'isomorphic-unfetch';
 import Head from '../components/head';
 
-export default function About() {
-	return (
-		<div>
-			<Head title='关于' />
-			<p>This is the about page</p>
-			<a href='/'>Go home</a>
-		</div>
-	);
+export default class About extends React.Component {
+	componentDidMount() {
+		console.log('componentDidMount');
+	}
+
+	static async getInitialProps() {
+		const res = await fetch('http://localhost:3000/api/report').then(res =>
+			res.json(),
+		);
+		console.log(res);
+		return res;
+	}
+
+	render() {
+		return (
+			<div className='report'>
+				<Head title='示例报告' />
+				<div className='report-header'>asfasf</div>
+			</div>
+		);
+	}
 }

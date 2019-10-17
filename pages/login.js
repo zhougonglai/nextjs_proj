@@ -17,6 +17,10 @@ export default class Login extends React.Component {
 		console.log('componentDidMount');
 	}
 
+	getInitialProps() {
+		console.log('getInitialProps');
+	}
+
 	blurFix() {
 		window.scrollTo({
 			top: 0,
