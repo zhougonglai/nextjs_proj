@@ -100,7 +100,18 @@ $n: 8px;
 @import './font';
 @import './shadow';
 @import './mixin';
+@import './components';
 
+@import '@material/react-button/index.scss';
+@import '@material/react-fab/index.scss';
+@import '@material/react-material-icon/index.scss';
+@import '@material/react-text-field/index.scss';
+
+// reset
 .mdc-button-shaped {
 	border-radius: 18px !important;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+	color: var(--mdc-theme-primary);
 }

@@ -11,21 +11,21 @@ export default () => {
 		<div className='root'>
 			<Head title='首页' scripts={scripts} />
 			<div className='cell-list cards'>
-				<div className='cell-item flex column align-center elevation-1'>
+				<div className='cell-item flex column align-center justify-evenly elevation-3'>
 					<Link href='/login'>
-						<Button raised className='mdc-button-shaped margin-vertical'>
+						<Button
+							unelevated
+							className='mdc-button-shaped margin-vertical'
+							type='button'>
 							立即查询
 						</Button>
 					</Link>
-					<a className='margin-vertical' href='/history'>
-						查看历史报告
-					</a>
 					<p>
 						已为<span className='text-primary'>287469</span>
 						人诊断了信用问题,帮助他们成功贷款.
 					</p>
 				</div>
-				<div className='cell-item flex elevation-1'>
+				<div className='cell-item flex elevation-3'>
 					<svg className='icon'>
 						<use xlinkHref='#icon-optimizationcogwheelsettingmechanismbul'></use>
 					</svg>
@@ -41,7 +41,11 @@ export default () => {
 								<span className='small text-gray text-through'>¥88.8次</span>
 							</div>
 							<Link href='/about'>
-								<Button dense raised className='mdc-button-shaped'>
+								<Button
+									dense
+									unelevated
+									className='mdc-button-shaped'
+									type='button'>
 									示例报告
 								</Button>
 							</Link>

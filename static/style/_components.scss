@@ -1,0 +1,21 @@
+.cell-list {
+	padding: 8px;
+	display: flex;
+	.cell-item {
+		width: 90vw;
+		min-height: 200px;
+		padding: 8px;
+		background-color: #fff;
+		border-radius: 5px;
+
+		.item-content {
+			padding: 8px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		& + .cell-item {
+			margin-top: 32px;
+		}
+	}
+}
