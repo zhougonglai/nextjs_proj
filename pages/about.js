@@ -8,6 +8,7 @@ const scripts = ['//at.alicdn.com/t/font_1461110_b80qt95a9l7.js'];
 export default class About extends React.Component {
 	state = {};
 	async componentDidMount() {
+		eruda.init();
 		const res = await fetch('/api/report').then(res => res.json());
 		this.setState(res.data);
 	}
@@ -112,7 +113,7 @@ export default class About extends React.Component {
 											((100 - this.state.loans.credit_card) / 100)
 										}></circle>
 								</svg>
-								<div className='descript large bold'>
+								<div className='descript large bold text-secondary'>
 									<div>信用卡申请</div>
 									<div>通过率</div>
 									<div>{this.state.loans.credit_card}%</div>
@@ -142,7 +143,7 @@ export default class About extends React.Component {
 											((100 - this.state.loans.p2p_lending) / 100)
 										}></circle>
 								</svg>
-								<div className='descript large bold'>
+								<div className='descript large bold text-tertiary'>
 									<div>网贷申请</div>
 									<div>通过率</div>
 									<div>{this.state.loans.p2p_lending}%</div>
