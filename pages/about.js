@@ -3,6 +3,8 @@ import Head from '../components/head';
 import BouncingLoader from '../components/bouncing-loader';
 import '../static/css/about.scss';
 
+const scripts = ['//at.alicdn.com/t/font_1461110_b80qt95a9l7.js'];
+
 export default class About extends React.Component {
 	state = {};
 	async componentDidMount() {
@@ -13,7 +15,7 @@ export default class About extends React.Component {
 	render() {
 		return (
 			<div className='report'>
-				<Head title='示例报告' />
+				<Head title='示例报告' scripts={scripts} />
 				{'info' in this.state ? (
 					<>
 						<div className='report-header'>
@@ -85,9 +87,76 @@ export default class About extends React.Component {
 							</div>
 						</div>
 
-						<div className='loans border-top-1px border-bottom-1px'>
-							<div className='credit_card cart'>credit_card</div>
-							<div className='p2p_lending cart'>p2p_lending</div>
+						<div className='loans'>
+							<div className='cart'>
+								<svg className='credit_card'>
+									<circle
+										className='fill-fit'
+										fill='transparent'
+										r='75'
+										cx='50%'
+										cy='50%'
+										strokeDasharray={Math.PI * 75 * 2}
+										strokeDashoffset='0'></circle>
+									<circle
+										className='bar'
+										fill='transparent'
+										r='75'
+										cx='50%'
+										cy='50%'
+										strokeDasharray={Math.PI * 75 * 2}
+										strokeDashoffset={
+											Math.PI *
+											75 *
+											2 *
+											((100 - this.state.loans.credit_card) / 100)
+										}></circle>
+								</svg>
+								<div className='descript large bold'>
+									<div>信用卡申请</div>
+									<div>通过率</div>
+									<div>{this.state.loans.credit_card}%</div>
+								</div>
+							</div>
+							<div className='p2p_lending cart'>
+								<svg className='p2p_lending'>
+									<circle
+										className='fill-fit'
+										fill='transparent'
+										r='75'
+										cx='50%'
+										cy='50%'
+										strokeDasharray={Math.PI * 75 * 2}
+										strokeDashoffset='0'></circle>
+									<circle
+										className='bar'
+										fill='transparent'
+										r='75'
+										cx='50%'
+										cy='50%'
+										strokeDasharray={Math.PI * 75 * 2}
+										strokeDashoffset={
+											Math.PI *
+											75 *
+											2 *
+											((100 - this.state.loans.p2p_lending) / 100)
+										}></circle>
+								</svg>
+								<div className='descript large bold'>
+									<div>网贷申请</div>
+									<div>通过率</div>
+									<div>{this.state.loans.p2p_lending}%</div>
+								</div>
+							</div>
+						</div>
+
+						<div className='xin'>
+							<div className='header'>
+								<svg className='icon'>
+									<use xlinkHref='#icon-zhima'></use>
+								</svg>
+								<div className='fill large bold'>芝麻信用评估</div>
+							</div>
 						</div>
 					</>
 				) : (

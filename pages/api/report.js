@@ -40,7 +40,11 @@ export default (req, res) => {
 				credit_card: 53,
 				p2p_lending: 36,
 			},
-			xin: {},
+			xin: {
+				same: true,
+				limit: 15000,
+				usable: 8574.59,
+			},
 		},
 	});
 };
