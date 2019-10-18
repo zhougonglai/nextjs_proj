@@ -7,6 +7,19 @@
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 45vh;
+
+	.fixed {
+		z-index: 99;
+	}
+
+	.bottom {
+		bottom: 50px;
+	}
+
+	.right {
+		right: 50px;
+	}
+
 	.report-header {
 		height: 435px;
 		background-color: var(--mdc-theme-primary);
@@ -54,36 +67,38 @@
 
 	.risk {
 		padding: 32px 16px;
-		.subtitle {
-			color: var(--mdc-theme-dark);
-			display: flex;
-			align-items: center;
-			.material-icons {
-				color: var(--mdc-theme-primary);
-			}
-		}
 		.risk-descript {
 			p {
 				color: var(--mdc-theme-dark-shade);
 				text-indent: 25px;
 			}
 		}
+	}
 
-		.risk-list {
-			.list {
-				.item {
-					margin-top: 16px;
-					display: flex;
-					align-items: center;
-					font-size: larger;
-					line-height: 1.5;
-					color: var(--mdc-theme-dark-shade);
+	.subtitle {
+		color: var(--mdc-theme-dark);
+		display: flex;
+		align-items: center;
+		.material-icons {
+			color: var(--mdc-theme-primary);
+			margin-right: 16px;
+		}
+	}
 
-					.fill {
-						height: 1px;
-						background-color: var(--mdc-theme-medium);
-					}
-				}
+	.list {
+		padding: 8px;
+		.item {
+			margin-top: 16px;
+			display: flex;
+			align-items: center;
+			font-size: larger;
+			line-height: 1.5;
+			color: var(--mdc-theme-dark-shade);
+
+			.fill {
+				height: 0;
+				border-bottom: 1px dotted var(--mdc-theme-medium);
+				margin: 0 32px;
 			}
 		}
 	}
@@ -146,7 +161,6 @@
 	}
 
 	.xin {
-		padding: 8px;
 		.header {
 			padding: 8px;
 			display: flex;
@@ -155,6 +169,11 @@
 				width: 65px;
 				height: 65px;
 			}
+		}
+		.mdc-data-table {
+			width: 80vw;
+			margin-left: 10vw;
+			margin-top: 16px;
 		}
 	}
 }
