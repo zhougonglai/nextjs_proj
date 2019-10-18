@@ -13,6 +13,7 @@ export default class About extends React.Component {
 	state = {
 		expansion: {
 			xin: true,
+			analyze: true,
 		},
 	};
 
@@ -175,7 +176,7 @@ export default class About extends React.Component {
 
 						<div className='xin'>
 							<div className='header'>
-								<svg className='icon'>
+								<svg className='icon mr-2'>
 									<use xlinkHref='#icon-zhima'></use>
 								</svg>
 								<div className='fill large bold'>芝麻信用评估</div>
@@ -191,7 +192,7 @@ export default class About extends React.Component {
 							</div>
 
 							{this.state.expansion.xin && (
-								<div className='subway'>
+								<>
 									<div className='list'>
 										<div className='item'>
 											是否实名一致
@@ -329,7 +330,34 @@ export default class About extends React.Component {
 											</tbody>
 										</table>
 									</div>
-								</div>
+								</>
+							)}
+						</div>
+
+						<div className='analyze'>
+							<div className='header'>
+								<svg className='icon mr-2'>
+									<use xlinkHref='#icon-strength_blue'></use>
+								</svg>
+								<div className='fill large bold'>运营商数据检测</div>
+								<IconButton onClick={() => this.expandable('analyze')}>
+									<MaterialIcon
+										icon={
+											this.state.expansion.analyze
+												? 'arrow_drop_down'
+												: 'arrow_drop_up'
+										}
+									/>
+								</IconButton>
+							</div>
+
+							{this.state.expansion.analyze && (
+								<>
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										消费分析
+									</div>
+								</>
 							)}
 						</div>
 					</>

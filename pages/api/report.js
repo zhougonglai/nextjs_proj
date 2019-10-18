@@ -102,6 +102,12 @@ export default (req, res) => {
 					},
 				],
 			},
+			analyze: {
+				consumption: {
+					autonym: true,
+					isUser: false,
+				},
+			},
 		},
 	});
 };
