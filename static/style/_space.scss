@@ -1,8 +1,4 @@
-.margin-horizontal {
-	margin-left: $n;
-	margin-right: $n;
-}
-
+/* margin-top */
 .mt-1 {
 	margin-top: $n;
 }
@@ -23,6 +19,7 @@
 	margin-top: 5 * $n;
 }
 
+/* margin-left */
 .ml-1 {
 	margin-left: $n;
 }
@@ -43,6 +40,7 @@
 	margin-left: 5 * $n;
 }
 
+/* margin-right */
 .mr-1 {
 	margin-right: $n;
 }
@@ -63,6 +61,7 @@
 	margin-right: 5 * $n;
 }
 
+/* margin-bottom */
 .mb-1 {
 	margin-bottom: $n;
 }
@@ -83,17 +82,89 @@
 	margin-bottom: 5 * $n;
 }
 
-.margin-vertical {
+.mx-1 {
+	margin-left: $n;
+	margin-right: $n;
+}
+.mx-2 {
+	margin-left: 2 * $n;
+	margin-right: 2 * $n;
+}
+.mx-3 {
+	margin-left: 3 * $n;
+	margin-right: 3 * $n;
+}
+
+.mx-4 {
+	margin-left: 4 * $n;
+	margin-right: 4 * $n;
+}
+
+.mx-5 {
+	margin-left: 5 * $n;
+	margin-right: 5 * $n;
+}
+
+.my-1 {
 	margin-top: $n;
 	margin-bottom: $n;
 }
+.my-2 {
+	margin-top: 2 * $n;
+	margin-bottom: 2 * $n;
+}
+.my-3 {
+	margin-top: 3 * $n;
+	margin-bottom: 3 * $n;
+}
+.my-4 {
+	margin-top: 4 * $n;
+	margin-bottom: 4 * $n;
+}
+.my-5 {
+	margin-top: 5 * $n;
+	margin-bottom: 5 * $n;
+}
 
-.padding-horizontal {
+/* padding */
+.px-1 {
 	padding-left: $n;
 	padding-right: $n;
 }
+.px-2 {
+	padding-left: 2 * $n;
+	padding-right: 2 * $n;
+}
+.px-3 {
+	padding-left: 3 * $n;
+	padding-right: 3 * $n;
+}
+.px-4 {
+	padding-left: 4 * $n;
+	padding-right: 4 * $n;
+}
+.px-5 {
+	padding-left: 5 * $n;
+	padding-right: 5 * $n;
+}
 
-.padding-vertical {
+.py-1 {
 	padding-top: $n;
 	padding-bottom: $n;
+}
+.py-2 {
+	padding-top: 2 * $n;
+	padding-bottom: 2 * $n;
+}
+.py-3 {
+	padding-top: 3 * $n;
+	padding-bottom: 3 * $n;
+}
+.py-4 {
+	padding-top: 4 * $n;
+	padding-bottom: 4 * $n;
+}
+.py-5 {
+	padding-top: 5 * $n;
+	padding-bottom: 5 * $n;
 }

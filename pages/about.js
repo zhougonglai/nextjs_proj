@@ -173,7 +173,7 @@ export default class About extends React.Component {
 								</div>
 							</div>
 						</div>
-
+						{/* 芝麻信用 */}
 						<div className='xin'>
 							<div className='header'>
 								<svg className='icon mr-2'>
@@ -193,7 +193,7 @@ export default class About extends React.Component {
 
 							{this.state.expansion.xin && (
 								<>
-									<div className='list'>
+									<div className='list mx-3'>
 										<div className='item'>
 											是否实名一致
 											<div className='fill'></div>
@@ -254,7 +254,7 @@ export default class About extends React.Component {
 										可疑行为
 									</div>
 
-									<div className='list'>
+									<div className='list mx-3'>
 										<div className='item'>
 											是否有疑似诈骗记录
 											<div className='fill'></div>
@@ -333,7 +333,7 @@ export default class About extends React.Component {
 								</>
 							)}
 						</div>
-
+						{/* 运营商数据检测 */}
 						<div className='analyze'>
 							<div className='header'>
 								<svg className='icon mr-2'>
@@ -356,6 +356,367 @@ export default class About extends React.Component {
 									<div className='subtitle large ml-1 mt-3'>
 										<MaterialIcon icon='donut_large' />
 										消费分析
+									</div>
+									<div className='list mx-3'>
+										<div className='item'>
+											是否实名认证
+											<div className='fill'></div>
+											{this.state.analyze.consumption.autonym
+												? '实名一致'
+												: '未实名'}
+										</div>
+										<div className='item'>
+											是否亲情网用户
+											<div className='fill'></div>
+											{this.state.analyze.consumption.isUser ? '是' : '否'}
+										</div>
+										<div className='item'>
+											入网时长
+											<div className='fill'></div>
+											{this.state.analyze.consumption.net_time}个月
+										</div>
+										<div className='item'>
+											号码归属
+											<div className='fill'></div>
+											{this.state.analyze.consumption.affiliation}
+										</div>
+										<div className='item'>
+											所属运营商
+											<div className='fill'></div>
+											{this.state.analyze.consumption.operator}
+										</div>
+										<div className='item'>
+											余额
+											<div className='fill'></div>
+											{this.state.analyze.consumption.balance}元
+										</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										交叉检测
+									</div>
+
+									<div className='list mx-3'>
+										<div className='item'>
+											黑中介分数
+											<div className='fill'></div>
+											<span
+												className={
+													this.state.analyze.cross_over_analysis
+														.black_intermediary_score < 40
+														? 'text-danger'
+														: this.state.analyze.cross_over_analysis
+																.black_intermediary_score < 60
+														? 'text-warning'
+														: 'text-success'
+												}>
+												{
+													this.state.analyze.cross_over_analysis
+														.black_intermediary_score
+												}
+											</span>
+										</div>
+										<div className='smaller text-gray'>
+											(总分100,低于40分为高危人群,
+											低于60分为警戒,高于60分为信用良好)
+										</div>
+										<div className='item'>
+											直接联系人数
+											<div className='fill'></div>
+											{
+												this.state.analyze.cross_over_analysis
+													.direct_contact_num
+											}
+											人
+										</div>
+										<div className='item'>
+											直接联系人黑名单
+											<div className='fill'></div>
+											{
+												this.state.analyze.cross_over_analysis
+													.direct_contact_blacklist_num
+											}
+											人
+										</div>
+										<div className='item'>
+											引起间接黑名单人数
+											<div className='fill'></div>
+											{
+												this.state.analyze.cross_over_analysis
+													.causes_indirect_blacklist_num
+											}
+											人
+										</div>
+										<div className='item'>
+											间接黑名单人数
+											<div className='fill'></div>
+											{
+												this.state.analyze.cross_over_analysis
+													.indirect_blacklist_number
+											}
+											人
+										</div>
+										<div className='item'>
+											直接联系人中引起间接黑名单占比
+											<div className='fill'></div>
+											{
+												this.state.analyze.cross_over_analysis
+													.direct_contacts_cause_indirect_blacklist_proportion
+											}
+											%
+										</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										关联检测
+									</div>
+
+									<div className='list mx-3'>
+										<div className='item'>
+											身份证是否组合过其他姓名
+											<div className='fill'></div>
+											{this.state.analyze.correlation_detection
+												.id_is_not_combined_with_other_names
+												? '是'
+												: '否'}
+										</div>
+										<div className='item'>
+											身份证是否组合过其他电话
+											<div className='fill'></div>
+											{this.state.analyze.correlation_detection
+												.id_is_not_combined_with_other_phone
+												? '是'
+												: '否'}
+										</div>
+										<div className='item'>
+											电话号码是否组合过其他姓名
+											<div className='fill'></div>
+											{this.state.analyze.correlation_detection
+												.phone_is_not_combined_with_other_names
+												? '是'
+												: '否'}
+										</div>
+										<div className='item'>
+											电话号码是否组合过其他身份证
+											<div className='fill'></div>
+											{this.state.analyze.correlation_detection
+												.phone_is_not_combined_with_other_id
+												? '是'
+												: '否'}
+										</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										通话行为检测
+									</div>
+
+									<div className='list mx-3'>
+										<div className='item'>
+											手机静默情况
+											<div className='fill'></div>
+											180天有
+											{
+												this.state.analyze.correlation_detection
+													.cell_phone_silence
+											}
+											天无通话记录
+										</div>
+										<div className='item'>
+											号码沉默度<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.number_silence === 'normal'
+												? '正常活跃用户'
+												: '不正常用户'}
+										</div>
+										<div className='item'>
+											欠费风险
+											<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.lack_of_risk === 'low'
+												? '低风险'
+												: '高风险'}
+										</div>
+										<div className='item'>
+											与110通话情况<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.call_the_police
+												? this.state.analyze.communication_behavior_detection
+														.call_the_police + '次'
+												: '无通话记录'}
+										</div>
+										<div className='item'>
+											与法院电话通话情况<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.court_calls
+												? this.state.analyze.communication_behavior_detection
+														.court_calls + '次'
+												: '无通话记录'}
+										</div>
+										<div className='item'>
+											与贷款类号码联系情况
+											<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.loan_type_phone_contact === 'none'
+												? '无该类号码记录'
+												: '多次号码记录'}
+										</div>
+										<div className='item'>
+											与银行类号码联系情况
+											<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.bank_type_phone_contact === 'often'
+												? '经常'
+												: '无'}
+										</div>
+										<div className='smaller text-gray'>
+											(联系次数在5次以上,包含5次,且主动呼叫占比大于50%,包含50%)
+										</div>
+										<div className='item'>
+											与信用卡类号码联系情况
+											<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.credit_card_type_phone_contact === 'occasionally'
+												? '偶尔'
+												: '无'}
+										</div>
+										<div className='item'>
+											与催收号码联系情况
+											<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.collection_type_phone_contact === 'none'
+												? '无该类号码记录'
+												: '有多次该类号码记录'}
+										</div>
+										<div className='item'>
+											夜间活动情况
+											<div className='fill'></div>
+											{this.state.analyze.communication_behavior_detection
+												.night_activity === 'low'
+												? '很少夜间活动'
+												: '无夜间活动'}
+										</div>
+										<div className='smaller text-gray'>(低于20%)</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										社交分析
+									</div>
+
+									<div className='list mx-3'>
+										<div className='item'>
+											朋友圈大小
+											<div className='fill'></div>
+											6个月共
+											<span className='text-danger'>
+												{
+													this.state.analyze.social_analysis
+														.circle_of_friends_size
+												}
+											</span>
+											个联系人
+										</div>
+										<div className='item'>
+											朋友圈亲密度
+											<div className='fill'></div>
+											近6个月与
+											<span className='text-danger'>
+												{
+													this.state.analyze.social_analysis
+														.circle_of_friends_intimacy
+												}
+											</span>
+											人联系十次以上
+										</div>
+										<div className='item'>
+											朋友圈互动
+											<div className='fill'></div>
+											近6个月与
+											<span className='text-danger'>
+												{
+													this.state.analyze.social_analysis
+														.circle_of_friends_interactive
+												}
+											</span>
+											人互相通话
+										</div>
+										<div className='item'>
+											朋友圈所在地
+											<div className='fill'></div>
+											{
+												this.state.analyze.social_analysis
+													.circle_of_friends_home
+											}
+										</div>
+										<div className='item'>
+											朋友圈是否在本地
+											<div className='fill'></div>
+											{this.state.analyze.social_analysis
+												.circle_of_friends_is_in_home
+												? '是'
+												: '否'}
+										</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										朋友圈手机号码归属地TOP3
+									</div>
+
+									<div className='mdc-data-table'>
+										<table className='mdc-data-table__table'>
+											<thead>
+												<tr className='mdc-data-table__header-row'>
+													<th
+														className='mdc-data-table__header-cell'
+														role='columnheader'
+														scope='col'>
+														通话地
+													</th>
+													<th
+														className='mdc-data-table__header-cell text-end'
+														role='columnheader'
+														scope='col'>
+														通话号码数
+													</th>
+													<th
+														className='mdc-data-table__header-cell text-end'
+														role='columnheader'
+														scope='col'>
+														主/被叫次数
+													</th>
+													<th
+														className='mdc-data-table__header-cell text-end'
+														role='columnheader'
+														scope='col'>
+														总分钟
+													</th>
+												</tr>
+											</thead>
+											<tbody className='mdc-data-table__content'>
+												{this.state.analyze.list_top_of_the_circle_of_friends.map(
+													(item, key) => (
+														<tr className='mdc-data-table__row' key={key}>
+															<td className='mdc-data-table__cell'>
+																{item.from}
+															</td>
+															<td className='mdc-data-table__cell text-center'>
+																{item.time}
+															</td>
+															<td className='mdc-data-table__cell text-center'>
+																{item.call_time}/{item.be_call_time}
+															</td>
+															<td className='mdc-data-table__cell text-center'>
+																{item.total_of_minutes}
+															</td>
+														</tr>
+													),
+												)}
+											</tbody>
+										</table>
 									</div>
 								</>
 							)}

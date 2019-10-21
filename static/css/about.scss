@@ -66,7 +66,7 @@
 	}
 
 	.risk {
-		padding: 32px 16px;
+		padding: 32px;
 		.risk-descript {
 			p {
 				color: var(--mdc-theme-dark-shade);
@@ -170,12 +170,12 @@
 				height: 65px;
 			}
 		}
-		.mdc-data-table {
-			width: 80vw;
-			margin-left: 10vw;
-			margin-top: 16px;
-			margin-bottom: 16px;
-		}
+	}
+	.mdc-data-table {
+		width: 90vw;
+		margin-left: 5vw;
+		margin-top: 16px;
+		margin-bottom: 16px;
 	}
 
 	.analyze {
