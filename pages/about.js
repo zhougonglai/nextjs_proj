@@ -782,6 +782,191 @@ export default class About extends React.Component {
 											</table>
 										</div>
 									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										消费分析
+									</div>
+
+									<div className='row justify-center'>
+										<div className='mdc-data-table'>
+											<table className='mdc-data-table__table'>
+												<thead>
+													<tr className='mdc-data-table__header-row'>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															消费类型
+														</th>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															6个月消费数(元)
+														</th>
+													</tr>
+												</thead>
+												<tbody className='mdc-data-table__content'>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>消费总金额</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.total_amount_of_consumption
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>
+															网络流量消费金额
+														</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.amount_of_network_traffic_consumption
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>
+															通话消费金额
+														</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.call_consumption
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>
+															短信消费金额
+														</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.message_consumption
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>
+															增值业务消费金额
+														</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.service_consumption
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>
+															其他消费金额
+														</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.other_consumption
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>充值金额</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.recharge_money
+															}
+														</td>
+													</tr>
+													<tr className='mdc-data-table__row'>
+														<td className='mdc-data-table__cell'>最大金额</td>
+														<td className='mdc-data-table__cell'>
+															{
+																this.state.analyze.consumption_table
+																	.single_large_recharge
+															}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										出行分析
+									</div>
+
+									<div className='row justify-center'>
+										<div className='mdc-data-table'>
+											<table className='mdc-data-table__table'>
+												<thead>
+													<tr className='mdc-data-table__header-row'>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															出发地
+														</th>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															目的地
+														</th>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															出发时间
+														</th>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															结束时间
+														</th>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															类型
+														</th>
+													</tr>
+												</thead>
+												<tbody className='mdc-data-table__content'>
+													{this.state.analyze.travel_analysis.map(
+														(item, key) => (
+															<tr className='mdc-data-table__row' key={key}>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.from}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.to}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{new Date(
+																		item.start_time,
+																	).toLocaleDateString()}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{new Date(item.end_time).toLocaleDateString()}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.type === 'Workday'
+																		? '工作日'
+																		: '节假日'}
+																</td>
+															</tr>
+														),
+													)}
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</>
 							)}
 						</div>
