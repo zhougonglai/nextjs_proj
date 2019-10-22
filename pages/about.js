@@ -298,37 +298,39 @@ export default class About extends React.Component {
 										消费分析
 									</div>
 
-									<div className='mdc-data-table'>
-										<table className='mdc-data-table__table'>
-											<thead>
-												<tr className='mdc-data-table__header-row'>
-													<th
-														className='mdc-data-table__header-cell'
-														role='columnheader'
-														scope='col'>
-														消费时间
-													</th>
-													<th
-														className='mdc-data-table__header-cell text-end'
-														role='columnheader'
-														scope='col'>
-														消费金额
-													</th>
-												</tr>
-											</thead>
-											<tbody className='mdc-data-table__content'>
-												{this.state.xin.consumption.map((consum, key) => (
-													<tr className='mdc-data-table__row' key={key}>
-														<td className='mdc-data-table__cell'>
-															{consum.year}-{consum.month}月
-														</td>
-														<td className='mdc-data-table__cell mdc-data-table__cell--numeric'>
-															{consum.money}元
-														</td>
+									<div className='row justify-center'>
+										<div className='mdc-data-table'>
+											<table className='mdc-data-table__table'>
+												<thead>
+													<tr className='mdc-data-table__header-row'>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															消费时间
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															消费金额
+														</th>
 													</tr>
-												))}
-											</tbody>
-										</table>
+												</thead>
+												<tbody className='mdc-data-table__content'>
+													{this.state.xin.consumption.map((consum, key) => (
+														<tr className='mdc-data-table__row' key={key}>
+															<td className='mdc-data-table__cell'>
+																{consum.year}-{consum.month}月
+															</td>
+															<td className='mdc-data-table__cell mdc-data-table__cell--numeric'>
+																{consum.money}元
+															</td>
+														</tr>
+													))}
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</>
 							)}
@@ -666,57 +668,119 @@ export default class About extends React.Component {
 										朋友圈手机号码归属地TOP3
 									</div>
 
-									<div className='mdc-data-table'>
-										<table className='mdc-data-table__table'>
-											<thead>
-												<tr className='mdc-data-table__header-row'>
-													<th
-														className='mdc-data-table__header-cell'
-														role='columnheader'
-														scope='col'>
-														通话地
-													</th>
-													<th
-														className='mdc-data-table__header-cell text-end'
-														role='columnheader'
-														scope='col'>
-														通话号码数
-													</th>
-													<th
-														className='mdc-data-table__header-cell text-end'
-														role='columnheader'
-														scope='col'>
-														主/被叫次数
-													</th>
-													<th
-														className='mdc-data-table__header-cell text-end'
-														role='columnheader'
-														scope='col'>
-														总分钟
-													</th>
-												</tr>
-											</thead>
-											<tbody className='mdc-data-table__content'>
-												{this.state.analyze.list_top_of_the_circle_of_friends.map(
-													(item, key) => (
-														<tr className='mdc-data-table__row' key={key}>
-															<td className='mdc-data-table__cell'>
-																{item.from}
-															</td>
-															<td className='mdc-data-table__cell text-center'>
-																{item.time}
-															</td>
-															<td className='mdc-data-table__cell text-center'>
-																{item.call_time}/{item.be_call_time}
-															</td>
-															<td className='mdc-data-table__cell text-center'>
-																{item.total_of_minutes}
-															</td>
-														</tr>
-													),
-												)}
-											</tbody>
-										</table>
+									<div className='row justify-center'>
+										<div className='mdc-data-table'>
+											<table className='mdc-data-table__table'>
+												<thead>
+													<tr className='mdc-data-table__header-row'>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															通话地
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															通话号码数
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															主/被叫次数
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															总分钟
+														</th>
+													</tr>
+												</thead>
+												<tbody className='mdc-data-table__content'>
+													{this.state.analyze.list_top_of_the_circle_of_friends.map(
+														(item, key) => (
+															<tr className='mdc-data-table__row' key={key}>
+																<td className='mdc-data-table__cell'>
+																	{item.from}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.time}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.call_time}/{item.be_call_time}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.total_of_minutes}
+																</td>
+															</tr>
+														),
+													)}
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div className='subtitle large ml-1 mt-3'>
+										<MaterialIcon icon='donut_large' />
+										近6个月经常联系人TOP10
+									</div>
+
+									<div className='row justify-center'>
+										<div className='mdc-data-table'>
+											<table className='mdc-data-table__table'>
+												<thead>
+													<tr className='mdc-data-table__header-row'>
+														<th
+															className='mdc-data-table__header-cell'
+															role='columnheader'
+															scope='col'>
+															对方号码
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															归属地
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															主/被叫次数
+														</th>
+														<th
+															className='mdc-data-table__header-cell text-end'
+															role='columnheader'
+															scope='col'>
+															总分钟
+														</th>
+													</tr>
+												</thead>
+												<tbody className='mdc-data-table__content'>
+													{this.state.analyze.list_often_of_the_circle_of_friends.map(
+														(item, key) => (
+															<tr className='mdc-data-table__row' key={key}>
+																<td className='mdc-data-table__cell'>
+																	{item.phone_numbe}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.from}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.call_time}/{item.be_call_time}
+																</td>
+																<td className='mdc-data-table__cell text-center'>
+																	{item.total_of_minutes}
+																</td>
+															</tr>
+														),
+													)}
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</>
 							)}

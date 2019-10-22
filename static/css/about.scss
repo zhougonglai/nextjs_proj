@@ -172,8 +172,8 @@
 		}
 	}
 	.mdc-data-table {
-		width: 90vw;
-		margin-left: 5vw;
+		width: fit-content;
+		min-width: 80vw;
 		margin-top: 16px;
 		margin-bottom: 16px;
 	}
