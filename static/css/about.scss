@@ -1,5 +1,5 @@
 .report {
-	background-color: #f5f5f7;
+	background-color: #fafafa;
 	width: 750px;
 	min-height: 100vh;
 	overflow-y: auto;
@@ -160,17 +160,16 @@
 		}
 	}
 
-	.xin {
-		.header {
-			padding: 8px;
-			display: flex;
-			align-items: center;
-			.icon {
-				width: 65px;
-				height: 65px;
-			}
+	.header {
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		.icon {
+			width: 65px;
+			height: 65px;
 		}
 	}
+
 	.mdc-data-table {
 		width: fit-content;
 		min-width: 80vw;
@@ -181,14 +180,5 @@
 	.analyze {
 		border-top: 1px dashed var(--mdc-theme-medium-tint);
 		border-bottom: 1px dashed var(--mdc-theme-medium-tint);
-		.header {
-			padding: 8px;
-			display: flex;
-			align-items: center;
-			.icon {
-				width: 65px;
-				height: 65px;
-			}
-		}
 	}
 }

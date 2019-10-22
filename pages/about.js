@@ -7,7 +7,7 @@ import Head from '../components/head';
 import BouncingLoader from '../components/bouncing-loader';
 import '../static/css/about.scss';
 
-const scripts = ['//at.alicdn.com/t/font_1461110_b80qt95a9l7.js'];
+const scripts = ['//at.alicdn.com/t/font_1461110_48imv6iweul.js'];
 
 export default class About extends React.Component {
 	state = {
@@ -900,7 +900,7 @@ export default class About extends React.Component {
 										出行分析
 									</div>
 
-									<div className='row justify-center'>
+									<div className='row justify-center px-2'>
 										<div className='mdc-data-table'>
 											<table className='mdc-data-table__table'>
 												<thead>
@@ -969,6 +969,372 @@ export default class About extends React.Component {
 									</div>
 								</>
 							)}
+						</div>
+
+						<div className='test'>
+							<div className='header'>
+								<svg className='icon mr-2'>
+									<use xlinkHref='#icon-test'></use>
+								</svg>
+								<div className='fill large bold'>检测报告详情</div>
+							</div>
+							<div className='subtitle large ml-1 mt-3'>
+								<MaterialIcon icon='donut_large' />
+								网贷风险检测
+							</div>
+
+							<div className='list mx-3'>
+								<div className='item'>
+									身份证命中高风险名单<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_test_risk_list.length ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									手机号命中高风险名单<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.phone_test_risk_list.length ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								{this.state.test_report_details.p2p_risk_test
+									.phone_test_risk_list.length && (
+									<div className='list'>
+										{this.state.test_report_details.p2p_risk_test.phone_test_risk_list.map(
+											(risk, key) => (
+												<div className='item bg-light-shade pa-1' key={key}>
+													<MaterialIcon icon='done' className='text-danger' />
+													<div className='ml-3'>
+														高风险:
+														{risk.label}
+													</div>
+												</div>
+											),
+										)}
+									</div>
+								)}
+								<div className='item'>
+									申请人命中网贷欺诈黑名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.applicant_in_p2p_blacklist.length ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								{this.state.test_report_details.p2p_risk_test
+									.phone_test_risk_list.length && (
+									<div className='list'>
+										{this.state.test_report_details.p2p_risk_test.applicant_in_p2p_blacklist.map(
+											(risk, key) => (
+												<div className='item bg-light-shade pa-1' key={key}>
+													<MaterialIcon icon='done' className='text-warning' />
+													<div className='ml-3'>
+														中风险:
+														{risk.label}
+													</div>
+												</div>
+											),
+										)}
+									</div>
+								)}
+								<div className='item'>
+									申请人命中网贷灰名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.applicant_in_p2p_graylist ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证是否命中恶意注册名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_hit_malicious_registration_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									手机号是否命中恶意注册名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.phone_hit_malicious_registration_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证是否存在信贷逾期历史记录
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_card_has_overdue_credit_history ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									手机号是否命中通讯小号库
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.phone_has_hit_communication_trumpet_library ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									手机号是否命中虚假号码库
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.phone_has_hit_communication_trumpet_library ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									手机号是否命中诈骗骚扰库
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.phone_hit_fraud_harassment_library ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证是否命中高风险区域
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_hit_high_risk_area ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证是否命中信贷逾期名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_hit_credit_overdue_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证是否命中信贷逾期后还款名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_hit_credit_overdue_repayment_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证对应人是否存在助学贷款欠费历史
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.identity_card_corresponds_is_history_of_student_loan_arrears ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证是否命中车辆租赁违约名单
+									<div className='fill'></div>
+									{this.state.test_report_details.p2p_risk_test
+										.id_hit_vehicle_rental_default_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+							</div>
+
+							<div className='subtitle large ml-1 mt-3'>
+								<MaterialIcon icon='donut_large' />
+								多头借贷数据检测
+							</div>
+
+							<div className='list mx-3'>
+								<div className='item'>
+									7天内在多个平台申请借款次数
+									<div className='fill'></div>
+									{
+										this.state.test_report_details.long_lending_data_detection
+											.times_of_application_for_loan_on_multiple_platforms_within_7_days
+									}
+									次
+								</div>
+								<div className='item'>
+									1个月内在多个平台申请借款次数
+									<div className='fill'></div>
+									{
+										this.state.test_report_details.long_lending_data_detection
+											.times_of_applying_for_loans_on_multiple_platforms_within_1_month
+									}
+									次
+								</div>
+								<div className='item'>
+									3个月在多个平台申请借款次数
+									<div className='fill'></div>
+									{
+										this.state.test_report_details.long_lending_data_detection
+											.times_of_applying_for_loans_on_multiple_platforms_within_3_month
+									}
+									次
+								</div>
+								<div className='item'>
+									3个月内申请贷款成功次数
+									<div className='fill'></div>
+									{
+										this.state.test_report_details.long_lending_data_detection
+											.number_of_successful_loan_applications_within_3_months
+									}
+									次
+								</div>
+							</div>
+
+							<div className='subtitle large ml-1 mt-3'>
+								<MaterialIcon icon='donut_large' />
+								不良信息检测
+							</div>
+
+							<div className='list mx-3'>
+								<div className='item'>
+									身份证是否命中法院失信黑名单
+									<div className='fill'></div>
+									{this.state.test_report_details.bad_information_detection
+										.id_hit_the_court_blacklist_of_broken_promises ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证命中法院执行名单
+									<div className='fill'></div>
+									{this.state.test_report_details.bad_information_detection
+										.id_hit_court_execution_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+
+								<div className='item'>
+									身份证命中法院结案名单
+									<div className='fill'></div>
+									{this.state.test_report_details.bad_information_detection
+										.id_hit_the_court_list_of_closed_cases ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+
+								<div className='item'>
+									身份证命中欠款公司法人代表名单
+									<div className='fill'></div>
+									{this.state.test_report_details.bad_information_detection
+										.id_hit_arrears_of_the_company_legal_representative_list ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+							</div>
+
+							<div className='subtitle large ml-1 mt-3'>
+								<MaterialIcon icon='donut_large' />
+								关联检测
+							</div>
+
+							<div className='list mx-3'>
+								<div className='item'>
+									手机号作为联系人出现次数过多<div className='fill'></div>
+									{this.state.test_report_details.correlation_detection
+										.phone_appears_too_often_as_contact ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									身份证作为联系人出现次数过多<div className='fill'></div>
+									{this.state.test_report_details.correlation_detection
+										.id_appears_too_often_contact ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+								<div className='item'>
+									3个月内身份证关联多个手机号<div className='fill'></div>
+									{this.state.test_report_details.correlation_detection
+										.multiple_phone_associated_with_id_within_3_months
+										.length ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+
+								{this.state.test_report_details.correlation_detection
+									.multiple_phone_associated_with_id_within_3_months.length && (
+									<div className='list'>
+										<div className='item bg-light-shade pa-1'>
+											{this.state.test_report_details.correlation_detection.multiple_phone_associated_with_id_within_3_months.map(
+												(risk, key) => (
+													<div className='ml-3' key={key}>
+														{risk}
+													</div>
+												),
+											)}
+										</div>
+									</div>
+								)}
+
+								<div className='item'>
+									3个月内手机号关联多个身份证<div className='fill'></div>
+									{this.state.test_report_details.correlation_detection
+										.multiple_id_associated_with_id_within_3_months.length ? (
+										<span className='text-danger'>是</span>
+									) : (
+										<span className='text-success'>否</span>
+									)}
+								</div>
+
+								{this.state.test_report_details.correlation_detection
+									.multiple_phone_associated_with_id_within_3_months.length && (
+									<div className='list'>
+										<div className='item bg-light-shade pa-1'>
+											{this.state.test_report_details.correlation_detection.multiple_id_associated_with_id_within_3_months.map(
+												(risk, key) => (
+													<div className='ml-3' key={key}>
+														{risk}
+													</div>
+												),
+											)}
+										</div>
+									</div>
+								)}
+							</div>
 						</div>
 					</>
 				) : (

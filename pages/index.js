@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Head from '../components/head';
 import '../static/css/index.scss';
 
-const scripts = ['//at.alicdn.com/t/font_1461110_b80qt95a9l7.js'];
+const scripts = ['//at.alicdn.com/t/font_1461110_48imv6iweul.js'];
 
 export default () => {
 	return (
