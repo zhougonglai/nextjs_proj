@@ -6,6 +6,10 @@ import Link from 'next/link';
 import MaterialIcon from '@material/react-material-icon';
 import '../static/css/login.scss';
 
+const APPID = 'wx379d17e1caf0fff3';
+const REDIRECT_URI = encodeURIComponent('https://nextjs.zhougonglai.now.sh/');
+const SCOPE = 'snsapi_userinfo';
+
 export default class Login extends React.Component {
 	state = {
 		name: '',
@@ -14,7 +18,9 @@ export default class Login extends React.Component {
 	};
 
 	componentDidMount() {
-		console.log('componentDidMount');
+		window.open(
+			`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${APPID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=${SCOPE}&state=STATE#wechat_redirect`,
+		);
 	}
 
 	blurFix() {
@@ -23,6 +29,7 @@ export default class Login extends React.Component {
 			behavior: 'smooth',
 		});
 	}
+
 	render() {
 		return (
 			<div className='login'>
