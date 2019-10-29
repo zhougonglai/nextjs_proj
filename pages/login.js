@@ -18,9 +18,7 @@ export default class Login extends React.Component {
 	};
 
 	componentDidMount() {
-		window.open(
-			`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${APPID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=${SCOPE}&state=STATE#wechat_redirect`,
-		);
+		window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${APPID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=${SCOPE}&state=STATE#wechat_redirect`;
 	}
 
 	blurFix() {
