@@ -9,6 +9,7 @@ const scripts = ['//at.alicdn.com/t/font_1461110_48imv6iweul.js'];
 export default class Index extends React.Component {
 	componentDidMount() {
 		console.log(location.search);
+		var vConsole = new VConsole();
 	}
 
 	render() {
