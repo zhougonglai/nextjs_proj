@@ -7,6 +7,9 @@ import '../static/css/index.scss';
 const scripts = ['//at.alicdn.com/t/font_1461110_48imv6iweul.js'];
 
 export default class Index extends React.Component {
+	componentDidMount() {
+		console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+	}
 	render() {
 		return (
 			<div className='root'>

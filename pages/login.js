@@ -7,7 +7,7 @@ import MaterialIcon from '@material/react-material-icon';
 import '../static/css/login.scss';
 
 const APPID = 'wx379d17e1caf0fff3';
-const REDIRECT_URI = encodeURIComponent('https://nextjs.zhougonglai.now.sh/');
+const REDIRECT_URI = encodeURIComponent('http://bg.yifudai.com/');
 const SCOPE = 'snsapi_userinfo';
 
 export default class Login extends React.Component {
